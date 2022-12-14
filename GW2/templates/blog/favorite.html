@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+            <!-- Bootstrap CSS -->
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+
+        <title>GW2 Favorite Posts</title>
+        {% endblock %}
+    </head>
+
+
+    <h1>Welcome to Fan Favorite GW2</h1>
+
+
+<body>
+    {% block content %}
+    <form method ="post">
+        <label for="name">Name</label>
+        <input name="name" id="name", value="{{request.form['name'] }}" required>
+
+        <label for="career">Job in Game</label>
+        <textarea name="career" id="career", value="{{request.form['career'] }}" required></textarea>
+
+        <label for="level">Enter your Level</label>
+        <textarea name="level" id="level", value="{{request.form['level'] }}" required></textarea>
+
+        <label for="wish">Main Wish for the game</label>
+        <textarea name="wish" id="wish", value="{{request.form['wish'] }}" required></textarea>
+        <input type="submit" value="Save">
+    </form>
+    {% endblock % }
+        {% block scripts %}
+            <!-- Optional JavaScript -->
+            {{ bootstrap.load_js() }}
+        {% endblock %}
+
+</body>
+</html>

@@ -15,3 +15,13 @@ CREATE TABLE post (
   body TEXT NOT NULL,
   FOREIGN KEY (author_id) REFERENCES user (id)
 );
+
+CREATE TABLE fav
+(
+    id     INTEGER PRIMARY KEY AUTOINCREMENT,
+    name   INTEGER NOT NULL,
+    career TEXT    NOT NULL,
+    level  TEXT    NOT NULL,
+    wish   TEXT    NOT NULL,
+    FOREIGN KEY (name) REFERENCES user (id)
+);
